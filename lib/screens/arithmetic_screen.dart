@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
 
+import '../model/arthemetic_model.dart';
+
 class ArithmeticScreen extends StatefulWidget {
   const ArithmeticScreen({super.key});
 
@@ -9,10 +11,12 @@ class ArithmeticScreen extends StatefulWidget {
 }
 
 class _ArithmeticScreenState extends State<ArithmeticScreen> {
-// Delcare variables
+// Declare variables
   int? first;
   int? second;
   int result = 0;
+
+  ArithmeticModel? arithmeticModel;
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +75,8 @@ class _ArithmeticScreenState extends State<ArithmeticScreen> {
               child: ElevatedButton(
                 onPressed: () {
                   setState(() {
-                    result = first! - second!;
+                    ArithmeticModel(first: first!,second:second!) ;
+                    result = arithmeticModel!.add();
                   });
                 },
                 child: const Text('Sub',
