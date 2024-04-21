@@ -1,7 +1,11 @@
+import 'dart:ui';
 
 import 'package:batch_32b/model/circle_model.dart';
 import 'package:batch_32b/model/simple_interest_model.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter/rendering.dart';
 
 class CircleScreen extends StatefulWidget {
   const CircleScreen({super.key});
@@ -13,13 +17,12 @@ class CircleScreen extends StatefulWidget {
 class CircleStateScreen extends State<CircleScreen> {
   //global key
   final myKey = GlobalKey<FormState>();
+
 // Declare variables
   double? radius;
   double result = 0;
 
   CircleModel? circleModel;
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -39,14 +42,23 @@ class CircleStateScreen extends State<CircleScreen> {
               TextField(
                 onChanged: (value) {
                   radius = double.parse(value);
-                },
 
+                },
                 keyboardType: TextInputType.number,
                 decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                  ),
+                  enabledBorder:OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.red),
+                  ) ,
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.green),
+                  ),
                   labelText: 'Enter radius',
                 ),
               ),
+
 
               const SizedBox(height: 8),
               // TextFormField(
@@ -65,6 +77,39 @@ class CircleStateScreen extends State<CircleScreen> {
               // TextFormField(
               //   onChanged: (value) {
               //     time = double.parse(value);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
               //   },
               //   keyboardType: TextInputType.number,
               //   decoration: const InputDecoration(
@@ -78,11 +123,12 @@ class CircleStateScreen extends State<CircleScreen> {
                 child: ElevatedButton(
                   onPressed: () {
                     setState(() {
-                      circleModel=  CircleModel(radius: radius!);
+                      circleModel = CircleModel(radius: radius!);
                       result = circleModel!.circleSquare();
                     });
                   },
-                  child: const Text('circle square',
+                  child: const Text(
+                    'circle square',
                     style: TextStyle(
                       fontSize: 25,
                     ),
@@ -92,7 +138,6 @@ class CircleStateScreen extends State<CircleScreen> {
 
               const SizedBox(height: 8),
 
-
               // Display information
               Text(
                 'Result is : $result',
@@ -101,18 +146,16 @@ class CircleStateScreen extends State<CircleScreen> {
                 ),
               ),
 
-
-
-              ElevatedButton(onPressed: (){
-                //check for the validation
-                if(myKey.currentState!.validate()){
-                  setState(() {
-                    result = (radius!*radius!*3.16);
-                  });
-                }
-              },
-                  child: const Text('Calculate')
-              ),
+              ElevatedButton(
+                  onPressed: () {
+                    //check for the validation
+                    if (myKey.currentState!.validate()) {
+                      setState(() {
+                        result = (radius! * radius! * 3.16);
+                      });
+                    }
+                  },
+                  child: const Text('Calculate')),
             ],
           ),
         ),

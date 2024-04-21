@@ -1,4 +1,7 @@
 
+import 'dart:io';
+import 'dart:ui';
+
 import 'package:batch_32b/model/simple_interest_model.dart';
 import 'package:flutter/material.dart';
 
@@ -23,10 +26,10 @@ class _SimpleInterestState extends State<SimpleInterest> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green[100],
+      backgroundColor: Colors.yellowAccent[100],
       appBar: AppBar(
         title: const Text("Arithmetic"),
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.yellow,
         centerTitle: true,
         elevation: 0,
       ),
@@ -112,6 +115,71 @@ class _SimpleInterestState extends State<SimpleInterest> {
               },
                   child: const Text('Calculate')
               ),
+
+              RichText(text: const TextSpan(
+                  text: "Hello ",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 30,
+                  ),
+              children:<TextSpan>[
+                TextSpan(
+                  text:'bold ',
+                  style: TextStyle(
+                    backgroundColor: Colors.green,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.amber,
+                  ),
+              ),
+                TextSpan(
+                  text: 'world!',
+                ),
+
+                  ]
+                  ),
+                ),
+
+              RichText(text: const
+              TextSpan(
+                  text: 'M',
+                  style: TextStyle(
+                    fontSize: 40,
+                    backgroundColor:Colors.green,
+                    fontWeight:FontWeight.bold ,
+                    color: Colors.yellow,
+                  ),
+                children: <TextSpan>[
+                  TextSpan(
+                    text:'y ',
+                    style: TextStyle(
+                      fontSize: 30,
+                      backgroundColor: Colors.green,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.amber,
+                    ),
+                  ),
+                  TextSpan(
+                    text:'name ',
+                    style: TextStyle(
+                      fontSize: 30,
+                      backgroundColor: Colors.green,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.amber,
+                    ),
+                  ),
+                  TextSpan(
+                    text:'Earth',
+                    style: TextStyle(
+                      fontSize: 30,
+                      backgroundColor: Colors.green,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.amber,
+                    ),
+                  )
+                ]
+              ),
+
+              )
             ],
           ),
         ),
