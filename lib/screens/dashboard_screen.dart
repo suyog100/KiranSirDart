@@ -4,6 +4,7 @@ import 'package:batch_32b/screens/simple_interest_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'arithmetic_screen.dart';
+import 'column_screen.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
@@ -45,8 +46,14 @@ class Dashboard extends StatelessWidget {
           SizedBox(width: double.infinity,
             child: ElevatedButton(onPressed: (){
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context)=>const DesingScreen() ));
-            },child: Text("New UI"),),)
+                  MaterialPageRoute(builder: (context)=>const DesignScreen() ));
+            },child: Text("New UI"),),),
+
+          SizedBox(width: double.infinity,
+            child: ElevatedButton(onPressed: (){
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context)=>const ColumnScreenState() ));
+            },child: const Text("column"),),),
         ]
 
             ),

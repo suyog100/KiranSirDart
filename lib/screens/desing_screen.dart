@@ -7,14 +7,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 
-class DesingScreen extends StatefulWidget {
-  const DesingScreen({super.key});
+class DesignScreen extends StatefulWidget {
+  const DesignScreen({super.key});
 
   @override
-  State<DesingScreen> createState() => CircleStateScreen();
+  State<DesignScreen> createState() => CircleStateScreen();
 }
 
-class CircleStateScreen extends State<DesingScreen> {
+class CircleStateScreen extends State<DesignScreen> {
   //global key
   final myKey = GlobalKey<FormState>();
 
@@ -40,7 +40,7 @@ class CircleStateScreen extends State<DesingScreen> {
             Column(
               children: [
                 Icon(
-                  Icons.call;
+                  Icons.call,
                 ),
                 SizedBox(height: 4,)
               ],
@@ -48,7 +48,6 @@ class CircleStateScreen extends State<DesingScreen> {
           ],
         ),
         ),
-      );;,
-    );
+      );
   }
 }
