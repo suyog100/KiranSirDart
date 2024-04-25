@@ -23,7 +23,7 @@ class _ArithmeticScreenState extends State<ArithmeticScreen> {
     return Scaffold(
       backgroundColor: Colors.green[100],
       appBar: AppBar(
-        title: const Text("Prasanna Jung Thapa"),
+        title: const Text("Suyog Manandhar"),
         backgroundColor: Colors.green,
         centerTitle: true,
         elevation: 0,
