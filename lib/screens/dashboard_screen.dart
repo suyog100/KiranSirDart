@@ -1,4 +1,5 @@
 import 'package:batch_32b/screens/circle_screen.dart';
+import 'package:batch_32b/screens/container_screen.dart';
 import 'package:batch_32b/screens/desing_screen.dart';
 import 'package:batch_32b/screens/simple_interest_screen.dart';
 import 'package:flutter/material.dart';
@@ -54,6 +55,12 @@ class Dashboard extends StatelessWidget {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context)=>const ColumnScreenState() ));
             },child: const Text("column"),),),
+
+          SizedBox(width: double.infinity,
+            child: ElevatedButton(onPressed: (){
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context)=>const ContainerScreen() ));
+            },child: Text("container screen"),),),
         ]
 
             ),

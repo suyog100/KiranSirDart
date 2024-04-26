@@ -12,11 +12,13 @@ class ArithmeticScreen extends StatefulWidget {
 
 class _ArithmeticScreenState extends State<ArithmeticScreen> {
 // Declare variables
-  int? first;
-  int? second;
-  int result = 0;
+   double? first;
+  double? second;
+  double result = 0;
 
   ArithmeticModel? arithmeticModel;
+
+  get output => null;
 
   @override
   Widget build(BuildContext context) {
@@ -57,57 +59,57 @@ class _ArithmeticScreenState extends State<ArithmeticScreen> {
             RadioListTile(
                 title: const Text('Add'),
                 value: 1.0,
-                groupValue: _result,
+                groupValue: result,
                 onChanged: (value) {
                   setState(() {
-                    _result = value!;
+                    result = value!;
                   });
                 }),
             RadioListTile(
                 title: const Text('Subtract'),
                 value: 2.0,
-                groupValue: _result,
+                groupValue: result,
                 onChanged: (value) {
                   setState(() {
-                    _result = value!;
+                    result = value!;
                   });
                 }),
             RadioListTile(
                 title: const Text('Multiply'),
                 value: 3.0,
-                groupValue: _result,
+                groupValue: result,
                 onChanged: (value) {
                   setState(() {
-                    _result = value!;
+                    result = value!;
                   });
                 }),
             RadioListTile(
                 title: const Text('Divide'),
                 value: 4.0,
-                groupValue: _result,
+                groupValue: result,
                 onChanged: (value) {
                   setState(() {
-                    _result = value!;
+                    result = value!;
                   });
                 }),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                  if (first != null && second != null && _result != null) {
+                  if (first != null && second != null && result != null) {
                     setState(() {
-                      switch (_result) {
+                      switch (result) {
                         case 1.0:
-                          output = first! + second!;
+                          var output = first! + second!;
                           break;
                         case 2.0:
-                          output = first! - second!;
+                          var output = first! - second!;
                           break;
                         case 3.0:
-                          output = first! * second!;
+                          var output = first! * second!;
                           break;
                         case 4.0:
-                          output = first! / second!;
+                          var output = first! / second!;
                           break;
                       }
                     });
@@ -123,7 +125,7 @@ class _ArithmeticScreenState extends State<ArithmeticScreen> {
             ),
             const SizedBox(height: 8),
 
-            // Display informatuion
+            // Display information
             Text(
               'The result is : $output',
               style: const TextStyle(
